@@ -1,0 +1,152 @@
+[
+ {
+  "slug": "router-setup",
+  "type": "article",
+  "url": "/articles/router-setup/",
+  "title": "রাউটার সেটআপ করার সহজ উপায়",
+  "date": "2026-10-12T10:00:00.000Z",
+  "category": "Networking",
+  "description": "নতুনদের জন্য সম্পূর্ণ গাইড — PPPoE, Static IP, WiFi কনফিগার",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "router",
+   "wifi",
+   "pppoe"
+  ],
+  "featured": true,
+  "read_time": 1
+ },
+ {
+  "slug": "cctv-remote-access",
+  "type": "article",
+  "url": "/articles/cctv-remote-access/",
+  "title": "CCTV DVR Remote Access: View Your Cameras From Anywhere",
+  "date": "2026-10-10T09:00:00.000Z",
+  "category": "CCTV",
+  "description": "Set up secure remote viewing for your DVR or NVR on mobile and PC — without exposing your network to attackers.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "cctv",
+   "dvr",
+   "remote-access"
+  ],
+  "featured": false,
+  "read_time": 1
+ },
+ {
+  "slug": "fix-ip-address-conflict",
+  "type": "article",
+  "url": "/articles/fix-ip-address-conflict/",
+  "title": "Fix “IP Address Conflict” and Common IP Errors in Minutes",
+  "date": "2026-10-08T08:00:00.000Z",
+  "category": "Networking",
+  "description": "Solve IP conflicts, DNS errors and “no internet” problems with a handful of commands you can run right now.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "ip",
+   "dns",
+   "troubleshooting"
+  ],
+  "featured": false,
+  "read_time": 1
+ },
+ {
+  "slug": "static-vs-dynamic-ip",
+  "type": "article",
+  "url": "/articles/static-vs-dynamic-ip/",
+  "title": "Static vs Dynamic IP: Which One Do You Actually Need?",
+  "date": "2026-10-05T08:00:00.000Z",
+  "category": "Networking",
+  "description": "A plain-English comparison of static and dynamic IP addresses, with clear rules for when to choose each.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "ip",
+   "dhcp",
+   "networking"
+  ],
+  "featured": false,
+  "read_time": 1
+ },
+ {
+  "slug": "speed-up-android-phone",
+  "type": "article",
+  "url": "/articles/speed-up-android-phone/",
+  "title": "Speed Up Your Android Phone: 9 Tricks That Actually Work",
+  "date": "2026-10-02T08:00:00.000Z",
+  "category": "Mobile",
+  "description": "Slow, laggy Android? These nine practical fixes free up storage and RAM and make animations smooth again.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "android",
+   "performance"
+  ],
+  "featured": false,
+  "read_time": 1
+ },
+ {
+  "slug": "build-your-first-pc",
+  "type": "article",
+  "url": "/articles/build-your-first-pc/",
+  "title": "Build Your First PC: A Beginner’s Step-by-Step Guide",
+  "date": "2026-09-28T08:00:00.000Z",
+  "category": "Hardware",
+  "description": "Choose compatible parts, assemble them in the right order and boot successfully on your first try.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "pc-build",
+   "hardware"
+  ],
+  "featured": false,
+  "read_time": 1
+ },
+ {
+  "slug": "responsive-website-basics",
+  "type": "article",
+  "url": "/articles/responsive-website-basics/",
+  "title": "Responsive Web Design in 2026: The Modern CSS Toolkit",
+  "date": "2026-09-25T08:00:00.000Z",
+  "category": "Development",
+  "description": "Build mobile-first layouts with Grid, container queries and fluid type — no framework required.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "css",
+   "html",
+   "responsive"
+  ],
+  "featured": false,
+  "read_time": 1
+ },
+ {
+  "slug": "ai-tools-for-developers",
+  "type": "article",
+  "url": "/articles/ai-tools-for-developers/",
+  "title": "AI Tools That Genuinely Save Developers Time",
+  "date": "2026-09-20T08:00:00.000Z",
+  "category": "AI",
+  "description": "Where AI actually helps in a developer's day — and a simple framework to use it without shipping bugs.",
+  "thumbnail": null,
+  "author": "TechNovaX Team",
+  "video_url": null,
+  "tags": [
+   "ai",
+   "productivity",
+   "developer"
+  ],
+  "featured": false,
+  "read_time": 1
+ }
+]

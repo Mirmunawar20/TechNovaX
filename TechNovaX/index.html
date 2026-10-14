@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>TechNovaX — Technology Made Simple | Networking, CCTV, Dev & AI Guides</title>
+<meta name="description" content="TechNovaX makes technology simple: step-by-step guides on router setup, CCTV, IP troubleshooting, development, hardware, mobile and AI — plus free tools like a subnet calculator.">
+<meta name="keywords" content="router setup, CCTV, IP troubleshooting, networking tutorials, web development, AI tools, subnet calculator">
+<meta name="author" content="TechNovaX">
+<meta name="theme-color" content="#05060d">
+<link rel="canonical" href="https://technovax.netlify.app/">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="alternate" type="application/rss+xml" title="TechNovaX RSS" href="/rss.xml">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TechNovaX">
+<meta property="og:title" content="TechNovaX — Technology Made Simple">
+<meta property="og:description" content="Practical guides on networking, CCTV, dev, hardware, mobile & AI — with free tools.">
+<meta property="og:image" content="https://technovax.netlify.app/assets/img/og.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/fa.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<script>
+/* no-flash theme */
+try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
+document.documentElement.classList.add('js');
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+{"@type":"WebSite","name":"TechNovaX","url":"https://technovax.netlify.app/","potentialAction":{"@type":"SearchAction","target":"https://technovax.netlify.app/?q={search_term_string}","query-input":"required name=search_term_string"}},
+{"@type":"Organization","name":"TechNovaX","url":"https://technovax.netlify.app/","logo":"https://technovax.netlify.app/assets/img/favicon.svg"},
+{"@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is TechNovaX free?","acceptedAnswer":{"@type":"Answer","text":"Yes. All tutorials and tools are free. The site is supported by ads and sponsors."}},
+{"@type":"Question","name":"Which topics do you cover?","acceptedAnswer":{"@type":"Answer","text":"Networking, CCTV & security, development, hardware, mobile tech and AI tools."}},
+{"@type":"Question","name":"Are the tutorials in Bangla or English?","acceptedAnswer":{"@type":"Answer","text":"Both. We publish in English and Bangla so more people can learn."}},
+{"@type":"Question","name":"How can I advertise on TechNovaX?","acceptedAnswer":{"@type":"Answer","text":"Use the Advertise section on the home page or email us. We offer banners, sponsored guides and newsletter sponsorship."}}
+]}]}
+</script>
+</head>
+<body>
+
+<!-- Preloader -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pre-core">
+    <div class="pre-ring"></div>
+    <svg viewBox="0 0 32 32" width="44" height="44"><path d="M18.5 2 6 18h8l-2 12L26 13h-8z" fill="currentColor"/></svg>
+  </div>
+  <div class="pre-word">Tech<span class="gradient-text">NovaX</span></div>
+  <div class="pre-bar"><i></i></div>
+</div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!--HEADER:START-->
+<header class="header" id="header">
+  <div class="container">
+    <nav class="navbar" aria-label="Main">
+      <a href="/" class="logo" aria-label="TechNovaX home">
+        <span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M18.5 2 6 18h8l-2 12L26 13h-8z" fill="currentColor"/></svg></span>
+        <span class="logo-text">Tech<span class="gradient-text">NovaX</span></span>
+      </a>
+
+      <ul class="nav-menu" id="navMenu">
+        <span class="nav-indicator" aria-hidden="true"></span>
+        <li><a href="/#home" class="nav-link">Home</a></li>
+        <li><a href="/#categories" class="nav-link">Categories</a></li>
+        <li><a href="/#tutorials" class="nav-link">Tutorials</a></li>
+        <li><a href="/#tools" class="nav-link">Free Tools</a></li>
+        <li><a href="/#advertise" class="nav-link">Advertise</a></li>
+        <li><a href="/#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="search-trigger" id="searchBtn" aria-label="Search (Ctrl+K)">
+          <i class="fas fa-search"></i><span>Search</span><kbd>Ctrl K</kbd>
+        </button>
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme"><i class="fas fa-moon"></i></button>
+        <a href="/#newsletter" class="btn btn-primary btn-sm nav-cta"><i class="fas fa-bell"></i> Subscribe</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!--HEADER:END-->
+
+<main id="main">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="home">
+  <canvas id="netCanvas" aria-hidden="true"></canvas>
+  <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <a href="#tools" class="hero-badge reveal">
+        <span class="pulse-dot"></span>
+        <span>New · Free Subnet Calculator is live</span>
+        <i class="fas fa-arrow-right"></i>
+      </a>
+
+      <h1 class="hero-title reveal" style="--d:.08s">
+        Technology made<br><span class="gradient-text rotator"><span id="rotator">Simple.</span><i class="caret"></i></span>
+      </h1>
+
+      <p class="hero-subtitle reveal" style="--d:.16s">
+        Step-by-step guides on routers, CCTV, IP troubleshooting, development, hardware and AI —
+        explained in plain language, in <b>English</b> and <b>বাংলা</b>.
+      </p>
+
+      <div class="hero-buttons reveal" style="--d:.24s">
+        <a href="#tutorials" class="btn btn-primary btn-lg magnetic"><i class="fas fa-book-open"></i> Start learning</a>
+        <a href="#tools" class="btn btn-ghost btn-lg magnetic"><i class="fas fa-screwdriver-wrench"></i> Free tools</a>
+      </div>
+
+      <div class="hero-stats reveal" style="--d:.32s">
+        <div class="stat"><h3><span class="counter" data-target="0" id="statArticles">0</span></h3><p>Guides published</p></div>
+        <div class="stat"><h3><span class="counter" data-target="6">0</span></h3><p>Topic hubs</p></div>
+        <div class="stat"><h3><span class="counter" data-target="3">0</span></h3><p>Free tools</p></div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal" style="--d:.2s" id="heroVisual">
+      <div class="terminal tilt" data-tilt="8">
+        <div class="term-bar">
+          <i></i><i></i><i></i>
+          <span>technovax — zsh</span>
+          <em class="term-live"><b></b> live</em>
+        </div>
+        <pre class="term-body" id="termBody" aria-label="Animated terminal demo"></pre>
+      </div>
+
+      <div class="chip chip-1"><i class="fas fa-wifi"></i><div><b>Router</b><small>Online · 940 Mbps</small></div></div>
+      <div class="chip chip-2"><i class="fas fa-video"></i><div><b>CCTV</b><small>4 cameras recording</small></div></div>
+      <div class="chip chip-3"><i class="fas fa-shield-halved"></i><div><b>WPA3</b><small>Network secured</small></div></div>
+    </div>
+  </div>
+
+  <a href="#categories" class="scroll-down" aria-label="Scroll down"><span></span></a>
+</section>
+
+<!-- ================= MARQUEE ================= -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span><i class="fas fa-network-wired"></i> Router Setup</span><span><i class="fas fa-video"></i> CCTV & DVR</span><span><i class="fas fa-ethernet"></i> IP Troubleshooting</span><span><i class="fas fa-code"></i> Web Development</span><span><i class="fas fa-microchip"></i> PC Hardware</span><span><i class="fas fa-mobile-screen"></i> Mobile Tips</span><span><i class="fas fa-robot"></i> AI Tools</span><span><i class="fas fa-shield-halved"></i> Cyber Security</span>
+    <span><i class="fas fa-network-wired"></i> Router Setup</span><span><i class="fas fa-video"></i> CCTV & DVR</span><span><i class="fas fa-ethernet"></i> IP Troubleshooting</span><span><i class="fas fa-code"></i> Web Development</span><span><i class="fas fa-microchip"></i> PC Hardware</span><span><i class="fas fa-mobile-screen"></i> Mobile Tips</span><span><i class="fas fa-robot"></i> AI Tools</span><span><i class="fas fa-shield-halved"></i> Cyber Security</span>
+  </div>
+</div>
+
+<div class="container"><div class="ad-slot reveal" data-ad="top"></div></div>
+
+<!-- ================= CATEGORIES ================= -->
+<section class="section" id="categories">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Explore</span>
+      <h2 class="section-title">Pick your <span class="gradient-text">learning path</span></h2>
+      <p class="section-desc">Six hubs, one goal: make complicated tech feel easy.</p>
+    </div>
+
+    <div class="bento">
+      <a href="#tutorials" class="bento-card spot tilt reveal b-lg" data-category="Networking" data-tilt="5" style="--c1:#5b8cff;--c2:#9b5cff">
+        <div class="bento-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Networking</h3>
+        <p>Router setup, PPPoE, static IPs, DNS and every “why is my internet down?” moment.</p>
+        <span class="bento-count"><b data-cat-count="Networking">0</b> <span class="gw">guides</span> <i class="fas fa-arrow-right"></i></span>
+        <div class="bento-art art-net" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      </a>
+      <a href="#tutorials" class="bento-card spot tilt reveal" data-category="CCTV" data-tilt="6" style="--c1:#ff5c8a;--c2:#ff9a5c;--d:.06s">
+        <div class="bento-icon"><i class="fas fa-video"></i></div>
+        <h3>CCTV &amp; Security</h3>
+        <p>DVR/NVR setup and remote viewing.</p>
+        <span class="bento-count"><b data-cat-count="CCTV">0</b> <span class="gw">guides</span> <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="#tutorials" class="bento-card spot tilt reveal" data-category="Development" data-tilt="6" style="--c1:#22d3ee;--c2:#3b82f6;--d:.12s">
+        <div class="bento-icon"><i class="fas fa-code"></i></div>
+        <h3>Development</h3>
+        <p>Web, code and modern workflows.</p>
+        <span class="bento-count"><b data-cat-count="Development">0</b> <span class="gw">guides</span> <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="#tutorials" class="bento-card spot tilt reveal" data-category="Hardware" data-tilt="6" style="--c1:#34d399;--c2:#22e6c4;--d:.06s">
+        <div class="bento-icon"><i class="fas fa-microchip"></i></div>
+        <h3>Hardware</h3>
+        <p>PC builds, upgrades and repairs.</p>
+        <span class="bento-count"><b data-cat-count="Hardware">0</b> <span class="gw">guides</span> <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="#tutorials" class="bento-card spot tilt reveal" data-category="Mobile" data-tilt="6" style="--c1:#f472b6;--c2:#fbbf24;--d:.12s">
+        <div class="bento-icon"><i class="fas fa-mobile-screen"></i></div>
+        <h3>Mobile Tech</h3>
+        <p>Speed, battery and app tricks.</p>
+        <span class="bento-count"><b data-cat-count="Mobile">0</b> <span class="gw">guides</span> <i class="fas fa-arrow-right"></i></span>
+      </a>
+      <a href="#tutorials" class="bento-card spot tilt reveal b-wide" data-category="AI" data-tilt="5" style="--c1:#a78bfa;--c2:#f0abfc;--d:.18s">
+        <div class="bento-icon"><i class="fas fa-robot"></i></div>
+        <div><h3>AI &amp; Tools</h3>
+        <p>The AI tools and automations actually worth your time — and how to use them.</p></div>
+        <span class="bento-count"><b data-cat-count="AI">0</b> <span class="gw">guides</span> <i class="fas fa-arrow-right"></i></span>
+        <div class="bento-art art-ai" aria-hidden="true"><i></i><i></i><i></i></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TUTORIALS ================= -->
+<section class="section section-alt" id="tutorials">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Latest</span>
+      <h2 class="section-title">Fresh <span class="gradient-text">tutorials</span></h2>
+      <p class="section-desc">Practical, tested and written to be followed — not just read.</p>
+    </div>
+
+    <div class="filters reveal" id="filters" role="tablist" aria-label="Filter by category">
+      <button class="chip-btn active" data-filter="all" role="tab">All</button>
+      <button class="chip-btn" data-filter="Networking" role="tab">Networking</button>
+      <button class="chip-btn" data-filter="CCTV" role="tab">CCTV</button>
+      <button class="chip-btn" data-filter="Development" role="tab">Development</button>
+      <button class="chip-btn" data-filter="Hardware" role="tab">Hardware</button>
+      <button class="chip-btn" data-filter="Mobile" role="tab">Mobile</button>
+      <button class="chip-btn" data-filter="AI" role="tab">AI</button>
+    </div>
+
+    <div class="tutorials-grid" id="tutorialsGrid" aria-live="polite"></div>
+    <div class="empty-state" id="emptyState" hidden>
+      <i class="fas fa-box-open"></i>
+      <p>No guides in this category yet — new ones are on the way.</p>
+    </div>
+
+    <div class="load-more-wrap">
+      <button class="btn btn-ghost btn-lg" id="loadMore"><i class="fas fa-plus"></i> Load more</button>
+    </div>
+  </div>
+</section>
+
+<div class="container"><div class="ad-slot reveal" data-ad="mid"></div></div>
+
+<!-- ================= TOOLS ================= -->
+<section class="section" id="tools">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Free tools</span>
+      <h2 class="section-title">Tools that <span class="gradient-text">earn bookmarks</span></h2>
+      <p class="section-desc">Runs entirely in your browser. Nothing is uploaded, nothing is stored.</p>
+    </div>
+
+    <div class="tools reveal">
+      <div class="tool-tabs" role="tablist" aria-label="Tools">
+        <button class="tool-tab active" role="tab" data-tool="subnet"><i class="fas fa-sitemap"></i><span>Subnet Calculator</span></button>
+        <button class="tool-tab" role="tab" data-tool="password"><i class="fas fa-key"></i><span>Password Generator</span></button>
+        <button class="tool-tab" role="tab" data-tool="download"><i class="fas fa-cloud-arrow-down"></i><span>Download Time</span></button>
+      </div>
+
+      <!-- Subnet -->
+      <div class="tool-panel active" id="tool-subnet" role="tabpanel">
+        <div class="tool-form">
+          <label class="field"><span>IPv4 address</span>
+            <input id="subIp" type="text" inputmode="decimal" value="192.168.1.10" placeholder="192.168.1.10" spellcheck="false" autocomplete="off">
+          </label>
+          <label class="field"><span>Prefix length <b id="subCidrVal">/24</b></span>
+            <input id="subCidr" type="range" min="8" max="32" value="24">
+          </label>
+          <p class="field-error" id="subErr" hidden></p>
+        </div>
+        <div class="bits" id="subBits" aria-label="Netmask in binary"></div>
+        <div class="result-grid" id="subOut"></div>
+      </div>
+
+      <!-- Password -->
+      <div class="tool-panel" id="tool-password" role="tabpanel">
+        <div class="pw-display">
+          <code id="pwOut">—</code>
+          <button class="icon-btn" id="pwCopy" aria-label="Copy password"><i class="far fa-copy"></i></button>
+          <button class="icon-btn" id="pwGen" aria-label="Generate new"><i class="fas fa-rotate"></i></button>
+        </div>
+        <div class="meter"><i id="pwMeter"></i></div>
+        <p class="meter-label" id="pwLabel">—</p>
+        <div class="tool-form">
+          <label class="field"><span>Length <b id="pwLenVal">20</b></span>
+            <input id="pwLen" type="range" min="8" max="64" value="20">
+          </label>
+          <div class="toggles">
+            <label class="toggle"><input type="checkbox" id="pwUp" checked><span>ABC</span></label>
+            <label class="toggle"><input type="checkbox" id="pwLow" checked><span>abc</span></label>
+            <label class="toggle"><input type="checkbox" id="pwNum" checked><span>123</span></label>
+            <label class="toggle"><input type="checkbox" id="pwSym" checked><span>#$%</span></label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Download time -->
+      <div class="tool-panel" id="tool-download" role="tabpanel">
+        <div class="tool-form two">
+          <label class="field"><span>File size</span>
+            <div class="inline">
+              <input id="dlSize" type="number" min="0" step="any" value="4.7">
+              <select id="dlUnit"><option value="1">MB</option><option value="1000" selected>GB</option><option value="1000000">TB</option></select>
+            </div>
+          </label>
+          <label class="field"><span>Connection speed (Mbps)</span>
+            <input id="dlSpeed" type="number" min="0.1" step="any" value="50">
+          </label>
+        </div>
+        <div class="dl-result">
+          <div class="dl-time" id="dlTime">—</div>
+          <p id="dlNote">Real-world speeds are usually 10–20% below your plan because of protocol overhead.</p>
+          <div class="dl-bar"><i id="dlBar"></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WHY US ================= -->
+<section class="section section-alt" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Why TechNovaX</span>
+      <h2 class="section-title">Built different, <span class="gradient-text">on purpose</span></h2>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card spot reveal"><div class="f-icon"><i class="fas fa-bolt"></i></div><h3>Blazing fast</h3><p>Static pages, self-hosted icons and zero heavy frameworks. It loads before you blink.</p></div>
+      <div class="feature-card spot reveal" style="--d:.06s"><div class="f-icon"><i class="fas fa-language"></i></div><h3>English + বাংলা</h3><p>Guides in the language you think in, with the technical terms kept clear.</p></div>
+      <div class="feature-card spot reveal" style="--d:.12s"><div class="f-icon"><i class="fas fa-list-check"></i></div><h3>Step by step</h3><p>Numbered steps, copy-ready commands and a table of contents on every guide.</p></div>
+      <div class="feature-card spot reveal"><div class="f-icon"><i class="fas fa-shield-halved"></i></div><h3>Privacy first</h3><p>Tools run locally. Analytics and ads only load after you give consent.</p></div>
+      <div class="feature-card spot reveal" style="--d:.06s"><div class="f-icon"><i class="fas fa-circle-half-stroke"></i></div><h3>Dark &amp; light</h3><p>Easy on the eyes at 2 AM, crisp at noon. Your choice is remembered.</p></div>
+      <div class="feature-card spot reveal" style="--d:.12s"><div class="f-icon"><i class="fas fa-download"></i></div><h3>Installable app</h3><p>Add TechNovaX to your phone’s home screen and read offline.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ADVERTISE ================= -->
+<section class="section" id="advertise">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Partner with us</span>
+      <h2 class="section-title">Put your brand in front of <span class="gradient-text">people who build &amp; buy tech</span></h2>
+      <p class="section-desc">Ad placements, sponsored guides and newsletter slots. Ask for the media kit and current rates.</p>
+    </div>
+    <div class="plans">
+      <div class="plan spot reveal">
+        <div class="plan-ic"><i class="fas fa-rectangle-ad"></i></div>
+        <h3>Display banners</h3>
+        <ul><li>Top, in-feed and article placements</li><li>Responsive on every device</li><li>Click &amp; impression reporting</li></ul>
+        <a class="btn btn-ghost" data-mail="ads" data-subject="Banner advertising enquiry">Get rates</a>
+      </div>
+      <div class="plan plan-hot spot reveal" style="--d:.08s">
+        <span class="plan-flag">Most popular</span>
+        <div class="plan-ic"><i class="fas fa-pen-nib"></i></div>
+        <h3>Sponsored guide</h3>
+        <ul><li>Custom tutorial featuring your product</li><li>Evergreen — keeps ranking in search</li><li>Shared to our social &amp; newsletter</li></ul>
+        <a class="btn btn-primary" data-mail="ads" data-subject="Sponsored guide enquiry">Get rates</a>
+      </div>
+      <div class="plan spot reveal" style="--d:.16s">
+        <div class="plan-ic"><i class="fas fa-envelope-open-text"></i></div>
+        <h3>Newsletter sponsor</h3>
+        <ul><li>Top-of-email placement</li><li>Direct to engaged readers</li><li>Weekly or one-off slots</li></ul>
+        <a class="btn btn-ghost" data-mail="ads" data-subject="Newsletter sponsorship enquiry">Get rates</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAQ ================= -->
+<section class="section section-alt" id="faq">
+  <div class="container narrow">
+    <div class="section-header reveal">
+      <span class="section-tag">FAQ</span>
+      <h2 class="section-title">Questions, <span class="gradient-text">answered</span></h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>Is TechNovaX free?</summary><p>Yes — every tutorial and tool is free. The site is supported by ads and sponsors.</p></details>
+      <details><summary>Which topics do you cover?</summary><p>Networking, CCTV &amp; security, development, hardware, mobile tech and AI tools.</p></details>
+      <details><summary>Are tutorials in Bangla or English?</summary><p>Both. We publish in English and বাংলা so more people can learn in their own language.</p></details>
+      <details><summary>Can I request a tutorial?</summary><p>Absolutely — use the contact form below and tell us what you’re stuck on.</p></details>
+      <details><summary>How can I advertise or sponsor?</summary><p>See the <a href="#advertise">Advertise</a> section or email us. We reply within 1–2 business days.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= NEWSLETTER ================= -->
+<section class="newsletter" id="newsletter">
+  <div class="container">
+    <div class="newsletter-box spot reveal">
+      <div class="nl-glow" aria-hidden="true"></div>
+      <div class="nl-icon"><i class="fas fa-paper-plane"></i></div>
+      <h2>One useful tech tip, every week.</h2>
+      <p>No spam, no fluff. Unsubscribe in one click.</p>
+      <form class="newsletter-form" id="newsletterForm" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="newsletter">
+        <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-tag">Contact</span>
+      <h2 class="section-title">Let’s <span class="gradient-text">talk</span></h2>
+      <p class="section-desc">Question, collab or tutorial request — we read everything.</p>
+    </div>
+    <div class="contact-wrap">
+      <div class="contact-side">
+        <a class="contact-card spot reveal" data-mail="contact"><i class="fas fa-envelope"></i><div><h3>Email</h3><span data-email="contact"></span></div></a>
+        <div class="contact-card spot reveal" style="--d:.06s"><i class="fas fa-clock"></i><div><h3>Response time</h3><span>Within 1–2 business days</span></div></div>
+        <div class="contact-card spot reveal" style="--d:.12s"><i class="fas fa-share-nodes"></i><div><h3>Follow</h3><div class="social-links" data-social></div></div></div>
+      </div>
+      <form class="contact-form reveal" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="--d:.1s">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label>Don’t fill this out: <input name="bot-field"></label></p>
+        <div class="two">
+          <label class="field"><span>Name</span><input name="name" required autocomplete="name"></label>
+          <label class="field"><span>Email</span><input name="email" type="email" required autocomplete="email"></label>
+        </div>
+        <label class="field"><span>Topic</span>
+          <select name="topic"><option>General question</option><option>Tutorial request</option><option>Advertising / sponsorship</option><option>Bug or feedback</option></select>
+        </label>
+        <label class="field"><span>Message</span><textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!--FOOTER:START-->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo">
+          <span class="logo-mark"><svg viewBox="0 0 32 32" width="22" height="22" aria-hidden="true"><path d="M18.5 2 6 18h8l-2 12L26 13h-8z" fill="currentColor"/></svg></span>
+          <span class="logo-text">Tech<span class="gradient-text">NovaX</span></span>
+        </a>
+        <p class="footer-desc">Technology Made Simple. Practical guides on networking, CCTV, development, hardware, mobile and AI — written for real people.</p>
+        <div class="social-links" data-social></div>
+      </div>
+      <div class="footer-col">
+        <h4>Learn</h4>
+        <ul>
+          <li><a href="/#categories">Categories</a></li>
+          <li><a href="/#tutorials">Latest tutorials</a></li>
+          <li><a href="/#tools">Free tools</a></li>
+          <li><a href="/rss.xml">RSS feed</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/#advertise">Advertise</a></li>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/admin/">Admin</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="/privacy.html">Privacy Policy</a></li>
+          <li><a href="/terms.html">Terms of Service</a></li>
+          <li><a href="/disclaimer.html">Disclaimer</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-giant" aria-hidden="true">TechNovaX</div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="year"></span> TechNovaX. All rights reserved.</p>
+      <p>Built for speed · Works offline · Dark &amp; light</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Search palette -->
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-modal="true" aria-label="Search">
+  <div class="search-panel">
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search tutorials, guides, videos…" autocomplete="off" spellcheck="false">
+      <button class="close-search" id="closeSearch" aria-label="Close"><kbd>Esc</kbd></button>
+    </div>
+    <div class="search-results" id="searchResults"></div>
+    <div class="search-foot"><span><kbd>↑</kbd><kbd>↓</kbd> navigate</span><span><kbd>Enter</kbd> open</span><span><kbd>Esc</kbd> close</span></div>
+  </div>
+</div>
+
+<div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+<div class="cookie" id="cookie" hidden>
+  <div class="cookie-icon"><i class="fas fa-cookie-bite"></i></div>
+  <p>We use cookies for analytics and to show relevant ads. You can accept or keep only essential cookies. <a href="/privacy.html">Learn more</a></p>
+  <div class="cookie-actions">
+    <button class="btn btn-ghost btn-sm" id="cookieDecline">Essential only</button>
+    <button class="btn btn-primary btn-sm" id="cookieAccept">Accept</button>
+  </div>
+</div>
+
+<!--FOOTER:END-->
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/analytics.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://technovax.netlify.app/</loc><lastmod>2026-10-14</lastmod><priority>1</priority></url>
+  <url><loc>https://technovax.netlify.app/disclaimer.html</loc><priority>0.3</priority></url>
+  <url><loc>https://technovax.netlify.app/privacy.html</loc><priority>0.3</priority></url>
+  <url><loc>https://technovax.netlify.app/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/router-setup/</loc><lastmod>2026-10-12</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/cctv-remote-access/</loc><lastmod>2026-10-10</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/fix-ip-address-conflict/</loc><lastmod>2026-10-08</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/static-vs-dynamic-ip/</loc><lastmod>2026-10-05</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/speed-up-android-phone/</loc><lastmod>2026-10-02</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/build-your-first-pc/</loc><lastmod>2026-09-28</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/responsive-website-basics/</loc><lastmod>2026-09-25</lastmod><priority>0.8</priority></url>
+  <url><loc>https://technovax.netlify.app/articles/ai-tools-for-developers/</loc><lastmod>2026-09-20</lastmod><priority>0.8</priority></url>
+</urlset>

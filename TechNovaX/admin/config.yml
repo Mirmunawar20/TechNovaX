@@ -1,0 +1,71 @@
+backend:
+  name: git-gateway
+  branch: main   # GitHub branch name (main / master)
+
+media_folder: "uploads"
+public_folder: "/uploads"
+locale: "en"
+
+site_url: https://technovax.netlify.app
+display_url: https://technovax.netlify.app
+logo_url: /assets/img/favicon.svg
+
+# After you save here, Netlify runs `npm run build` and the page goes live automatically.
+collections:
+  # ============ ARTICLES ============
+  - name: "articles"
+    label: "📝 Articles"
+    label_singular: "Article"
+    folder: "content/articles"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    summary: "{{title}} — {{category}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Networking", "CCTV", "Development", "Hardware", "Mobile", "AI"] }
+      - { label: "Featured on homepage", name: "featured", widget: "boolean", default: false, required: false }
+      - { label: "Cover Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Short Description (shows on Google & social share)", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "TechNovaX" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  # ============ VIDEOS ============
+  - name: "videos"
+    label: "🎥 Videos"
+    label_singular: "Video"
+    folder: "content/videos"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Video Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Category", name: "category", widget: "select", options: ["Networking", "CCTV", "Development", "Hardware", "Mobile", "AI"] }
+      - { label: "YouTube / Vimeo / Facebook / MP4 URL", name: "video_url", widget: "string" }
+      - { label: "Custom Thumbnail", name: "thumbnail", widget: "image", required: false }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Author", name: "author", widget: "string", default: "TechNovaX" }
+      - { label: "Notes / Transcript (optional)", name: "body", widget: "markdown", required: false }
+
+  # ============ IMAGE GALLERY ============
+  - name: "gallery"
+    label: "🖼️ Gallery"
+    label_singular: "Image"
+    folder: "content/images"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Image", name: "thumbnail", widget: "image" }
+      - { label: "Category", name: "category", widget: "select", options: ["Networking", "CCTV", "Development", "Hardware", "Mobile", "AI"] }
+      - { label: "Caption", name: "description", widget: "string" }
+      - { label: "Body (optional)", name: "body", widget: "markdown", required: false }

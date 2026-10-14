@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="{{lang}}" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>{{title}} | TechNovaX</title>
+<meta name="description" content="{{description}}">
+<meta name="author" content="{{author}}">
+<meta name="theme-color" content="#05060d">
+<link rel="canonical" href="{{canonical}}">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg">
+<link rel="alternate" type="application/rss+xml" title="TechNovaX RSS" href="/rss.xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="TechNovaX">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{ogimage}}">
+<meta property="article:published_time" content="{{date}}">
+<meta property="article:section" content="{{category}}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{title}}">
+<meta name="twitter:description" content="{{description}}">
+<meta name="twitter:image" content="{{ogimage}}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/fa.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="/assets/css/post.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}document.documentElement.classList.add('js');</script>
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body class="post-body">
+<div class="scroll-progress" id="scrollProgress"></div>
+<div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+<div class="noise" aria-hidden="true"></div>
+
+<!--HEADER:START-->
+<!--HEADER:END-->
+
+<main class="post-page" id="main" data-cat="{{category}}" data-slug="{{slug}}" data-type="{{type}}">
+  <div class="post-bg" aria-hidden="true"><i></i><i></i></div>
+  <div class="container post-container">
+
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/"><i class="fas fa-house"></i> Home</a><i class="fas fa-chevron-right"></i>
+      <a href="/#tutorials">{{category}}</a><i class="fas fa-chevron-right"></i>
+      <span>{{title}}</span>
+    </nav>
+
+    <header class="post-header">
+      <div class="post-meta-top">
+        <span class="tutorial-tag" data-cat="{{category}}">{{category}}</span>
+        <span class="post-type"><i class="fas {{typeicon}}"></i> {{typelabel}}</span>
+      </div>
+      <h1 class="post-title">{{title}}</h1>
+      <p class="post-lead">{{description}}</p>
+      <div class="post-info">
+        <div class="post-author">
+          <div class="avatar">{{initials}}</div>
+          <div><strong>{{author}}</strong><span>{{datefmt}} · {{readtime}} min {{readverb}}</span></div>
+        </div>
+        <div class="post-actions">
+          <button class="icon-btn" id="shareBtn" aria-label="Share"><i class="fas fa-share-nodes"></i></button>
+          <button class="icon-btn" id="bookmarkBtn" aria-label="Bookmark"><i class="far fa-bookmark"></i></button>
+          <button class="icon-btn" id="printBtn" aria-label="Print"><i class="fas fa-print"></i></button>
+        </div>
+      </div>
+    </header>
+
+    {{cover}}
+
+    <div class="post-layout">
+      <aside class="toc" id="toc" aria-label="Table of contents">
+        <h4><i class="fas fa-list-ul"></i> On this page</h4>
+        <ul id="tocList"></ul>
+        <div class="toc-share">
+          <span>Share</span>
+          <div class="share-mini" data-share-row></div>
+        </div>
+      </aside>
+
+      <article class="prose" id="prose">
+{{body}}
+      </article>
+    </div>
+
+    <div class="ad-slot" data-ad="article"></div>
+
+    <div class="post-tags">{{tags}}</div>
+
+    <section class="share-card spot">
+      <div>
+        <h3>Found this useful?</h3>
+        <p>Share it with someone who is stuck on the same problem.</p>
+      </div>
+      <div class="share-buttons" data-share-row="full"></div>
+    </section>
+
+    <section class="related">
+      <h2>Keep learning</h2>
+      <div class="tutorials-grid related-grid" id="relatedGrid"></div>
+    </section>
+  </div>
+</main>
+
+<!--FOOTER:START-->
+<!--FOOTER:END-->
+
+<script src="/assets/js/config.js"></script>
+<script src="/assets/js/analytics.js" defer></script>
+<script src="/assets/js/main.js" defer></script>
+<script src="/assets/js/post.js" defer></script>
+</body>
+</html>
